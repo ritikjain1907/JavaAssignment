@@ -14,8 +14,7 @@ public class Impl implements IService {
 	
 	/**
 	 * @description computeTimeEquivalent Method to compute Days, Hours, Minutes and Seconds
-	 * @param digitObj
-	 * @return digitCounter
+	 * @param schemaObj
 	 */
 	@Override
 	public void computeTimeEquivalent(Schema schemaObj) {

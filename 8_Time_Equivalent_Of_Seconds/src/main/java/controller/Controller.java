@@ -4,11 +4,11 @@
  */
 package main.java.controller;
 
-import java.text.DecimalFormat;
 import java.util.Scanner;
+
 import main.java.schema.Schema;
-import main.java.validator.Validator;
 import main.java.service.impl.Impl;
+import main.java.validator.Validator;
 
 /**
  * @author Ritik
@@ -19,7 +19,6 @@ public class Controller {
 
 	/**
 	 * Main class
-	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {

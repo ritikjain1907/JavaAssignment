@@ -1,5 +1,5 @@
 /**
- * JUnit Test Cases
+ * Junit Test Case Class
  */
 package test.java.validator;
 
@@ -8,133 +8,96 @@ package test.java.validator;
  *
  */
 
-import main.java.validator.PriceAndTaxValidator;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Assert;
 
-public class GrossPriceTest {
+import main.java.schema.Product;
+import main.java.service.impl.GrossPriceImpl;
+import main.java.validator.PriceAndTaxValidator;
 
-	/**
-	 * Valid - Positive Integer
-	 */
+public class GrossPriceTest {
+	
 	@Test
-	public void testValidPositiveInteger() {
+	public void testValidCase1() {
 		
-		String testInteger = "345";
-		DigitValidator digitValidator = new DigitValidator();
+		double netPrice = 99.95;
+		double taxrate = 0.12;
 		
-		Boolean check = digitValidator.validateInteger(testInteger);
-		Assert.assertEquals(Boolean.TRUE, check);
+		PriceAndTaxValidator priceAndTaxValidator = new PriceAndTaxValidator();
+		Boolean check = priceAndTaxValidator.validatePriceAndTax(netPrice, taxrate);
+		Assert.assertEquals(check, Boolean.TRUE);
+		Product productObj = new Product(netPrice, taxrate);
+		GrossPriceImpl grossPriceImpl = new GrossPriceImpl();
+		double ans = grossPriceImpl.calculateGrossPrice(productObj);
+		assertEquals(ans, 89.24, 0.01);
 	}
 	
-	/**
-	 * Valid - Negative Integer
-	 */
 	@Test
-	public void testValidNegativeInteger() {
+	public void testValidCase2() {
 		
-		String testInteger = "-90362";
-		DigitValidator digitValidator = new DigitValidator();
+		double netPrice = 49999.00;
+		double taxrate = 0.28;
 		
-		Boolean check = digitValidator.validateInteger(testInteger);
-		Assert.assertEquals(Boolean.TRUE, check);
+		PriceAndTaxValidator priceAndTaxValidator = new PriceAndTaxValidator();
+		Boolean check = priceAndTaxValidator.validatePriceAndTax(netPrice, taxrate);
+		Assert.assertEquals(check, Boolean.TRUE);
+		Product productObj = new Product(netPrice, taxrate);
+		GrossPriceImpl grossPriceImpl = new GrossPriceImpl();
+		double ans = grossPriceImpl.calculateGrossPrice(productObj);
+		assertEquals(ans, 39061.72, 0.01);
 	}
 	
-	/**
-	 * Valid - Positive Integer With Leading Zero
-	 */
-	@Test()
-	public void testValidPositiveIntegerWithLeadingZero() {
+	@Test
+	public void testValidCase3() {
 		
-		String testInteger = "00089";
-		DigitValidator digitValidator = new DigitValidator();
+		double netPrice = 720.00;
+		double taxrate = 0.05;
 		
-		Boolean check = digitValidator.validateInteger(testInteger);
-		Assert.assertEquals(Boolean.TRUE, check);
+		PriceAndTaxValidator priceAndTaxValidator = new PriceAndTaxValidator();
+		Boolean check = priceAndTaxValidator.validatePriceAndTax(netPrice, taxrate);
+		Assert.assertEquals(check, Boolean.TRUE);
+		Product productObj = new Product(netPrice, taxrate);
+		GrossPriceImpl grossPriceImpl = new GrossPriceImpl();
+		double ans = grossPriceImpl.calculateGrossPrice(productObj);
+		assertEquals(ans, 685.71, 0.01);
 	}
 	
-	/**
-	 * Valid - Negative Integer With Leading Zero
-	 */
-	@Test()
-	public void testValidNegativeIntegerWithLeadingZero() {
+	@Test
+	public void testValidCase4() {
 		
-		String testInteger = "-0039486";
-		DigitValidator digitValidator = new DigitValidator();
+		double netPrice = 45.00;
+		double taxrate = 0.0;
 		
-		Boolean check = digitValidator.validateInteger(testInteger);
-		Assert.assertEquals(Boolean.TRUE, check);
+		PriceAndTaxValidator priceAndTaxValidator = new PriceAndTaxValidator();
+		Boolean check = priceAndTaxValidator.validatePriceAndTax(netPrice, taxrate);
+		Assert.assertEquals(check, Boolean.TRUE);
+		Product productObj = new Product(netPrice, taxrate);
+		GrossPriceImpl grossPriceImpl = new GrossPriceImpl();
+		double ans = grossPriceImpl.calculateGrossPrice(productObj);
+		assertEquals(ans, 45.00, 0.01);
 	}
 	
-	/**
-	 * Invalid - Empty Value
-	 */
 	@Test(expected = NumberFormatException.class)
-	public void testInvalidIntegerWithEmptyValue() {
+	public void testInvalidCase5() {
 		
-		String testInteger = "";
-		DigitValidator digitValidator = new DigitValidator();
+		double netPrice = -1099.99;
+		double taxrate = 0.18;
 		
-		Boolean check = digitValidator.validateInteger(testInteger);
+		PriceAndTaxValidator priceAndTaxValidator = new PriceAndTaxValidator();
+		Boolean check = priceAndTaxValidator.validatePriceAndTax(netPrice, taxrate);
 	}
 	
-	/**
-	 * Invalid - Contains String
-	 */
 	@Test(expected = NumberFormatException.class)
-	public void testInvalidIntegerWithString() {
+	public void testInvalidCase6() {
 		
-		String testInteger = "testString";
-		DigitValidator digitValidator = new DigitValidator();
+		double netPrice = 2999;
+		double taxrate = -0.1;
 		
-		Boolean check = digitValidator.validateInteger(testInteger);
+		PriceAndTaxValidator priceAndTaxValidator = new PriceAndTaxValidator();
+		Boolean check = priceAndTaxValidator.validatePriceAndTax(netPrice, taxrate);
 	}
-	
-	/**
-	 * Invalid - Positive Integer Contains Characters
-	 */
-	@Test(expected = NumberFormatException.class)
-	public void testInvalidPositiveIntegerWithChar() {
-		
-		String testInteger = "a12g3";
-		DigitValidator digitValidator = new DigitValidator();
-		
-		Boolean check = digitValidator.validateInteger(testInteger);
-	}
-	
-	/**
-	 * Invalid - Negative Integer Contains Characters
-	 */
-	@Test(expected = NumberFormatException.class)
-	public void testInvalidNegativeIntegerWithChar() {
-		
-		String testInteger = "-12df3";
-		DigitValidator digitValidator = new DigitValidator();
-		
-		Boolean check = digitValidator.validateInteger(testInteger);
-	}
-	
-	/**
-	 * Invalid - Positive Integer With Decimal
-	 */
-	@Test(expected = NumberFormatException.class)
-	public void testInvalidPositiveIntegerWithDecimal() {
-		
-		String testInteger = "9563.87";
-		DigitValidator digitValidator = new DigitValidator();
-		
-		Boolean check = digitValidator.validateInteger(testInteger);
-	}
-	
-	/**
-	 * Invalid - Negative Integer With Decimal
-	 */
-	@Test(expected = NumberFormatException.class)
-	public void testInvalidNegativeIntegerWithDecimal() {
-		
-		String testInteger = "-1052.563";
-		DigitValidator digitValidator = new DigitValidator();
-		
-		Boolean check = digitValidator.validateInteger(testInteger);
-	}
+
 }

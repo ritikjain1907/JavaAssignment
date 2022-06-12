@@ -13,12 +13,12 @@ import main.java.service.IService;
 public class Impl implements IService {
 	
 	/**
-	 * @description findLargerNumber Method to find the larger number between two numbers
+	 * @description findLargerNumber method to find the larger number between two numbers
 	 * @param digitObj
 	 * @return digitCounter
 	 */
 	@Override
-	public Double findLargerNumber(Schema schemaObj) {
+	public double findLargerNumber(Schema schemaObj) {
 		
 		if(schemaObj.getFirstNumber() > schemaObj.getSecondNumber())
 		{

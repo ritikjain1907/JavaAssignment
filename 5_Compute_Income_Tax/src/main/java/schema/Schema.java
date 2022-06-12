@@ -1,5 +1,5 @@
 /**
- * Digit Class
+ * Schema Class
  */
 package main.java.schema;
 

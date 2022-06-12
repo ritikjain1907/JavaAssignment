@@ -13,8 +13,7 @@ import main.java.service.IService;
 public class Impl implements IService {
 
 	/**
-	 * @description computeTimeEquivalent Method to compute Days, Hours, Minutes and
-	 *              Seconds
+	 * @description checkIfIntegerIsSpecial Method check if integer is special
 	 * @param schemaObj
 	 * @return Boolean
 	 */

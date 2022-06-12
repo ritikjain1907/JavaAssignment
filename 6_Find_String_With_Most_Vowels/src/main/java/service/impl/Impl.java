@@ -14,8 +14,9 @@ public class Impl implements IService {
 	
 	/**
 	 * @description findStringWithMostVowels Method to find the string with most vowels
-	 * @param digitObj
-	 * @return digitCounter
+	 * @param schemaObj
+	 * @return String - Valid Case
+	 * @return RuntimeException - Invalid case
 	 */
 	@Override
 	public String findStringWithMostVowels(Schema schemaObj) {
@@ -48,6 +49,10 @@ public class Impl implements IService {
 				maxValue = vowelCount[i];
 				maxPosition = i;
 			}
+		}
+		
+		if(maxPosition==0 && maxValue==0) {
+			throw new RuntimeException("No vowels found in any String");
 		}
 		
 		return stringArray[maxPosition];

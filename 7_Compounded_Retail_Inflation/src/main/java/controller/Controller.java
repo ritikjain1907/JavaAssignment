@@ -19,7 +19,6 @@ public class Controller {
 
 	/**
 	 * Main class
-	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {

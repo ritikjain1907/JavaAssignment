@@ -24,9 +24,9 @@ public class Controller {
 		
 		Scanner scanObj = new Scanner(System.in);
 		System.out.print("Enter the First Number : ");
-		Double firstNumber = scanObj.nextDouble();
+		double firstNumber = scanObj.nextDouble();
 		System.out.print("Enter the Second Number : ");
-		Double secondNumber = scanObj.nextDouble();
+		double secondNumber = scanObj.nextDouble();
 		scanObj.close();
 		
 		Validator validator = new Validator();
@@ -39,7 +39,7 @@ public class Controller {
 			Impl impl = new Impl();
 			System.out.println("Larger Number Between " + firstNumber + " and : " + secondNumber + " is : " + impl.findLargerNumber(schemaObj));
 		}
-		catch(NumberFormatException e) {
+		catch(RuntimeException e) {
 			e.printStackTrace();
 		}
 	}

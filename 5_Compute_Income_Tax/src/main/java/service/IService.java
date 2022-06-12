@@ -1,7 +1,20 @@
+/**
+ * Iservice Interface
+ */
 package main.java.service;
+
+/**
+ * @author Ritik
+ *
+ */
 
 import main.java.schema.Schema;
 
 public interface IService {
-	public Double computeIncomeTax(Schema schemaObj);
+	/**
+	 * 
+	 * @param schemaObj
+	 * @return double
+	 */
+	public double computeIncomeTax(Schema schemaObj);
 }

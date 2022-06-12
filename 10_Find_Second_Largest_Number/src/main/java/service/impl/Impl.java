@@ -13,7 +13,7 @@ import main.java.service.IService;
 public class Impl implements IService {
 	
 	/**
-	 * @description findSecondLargestNumber Method to find the second largest number
+	 * @description findSecondLargestNumber Method to find the second largest number in an array
 	 * @param digitObj
 	 * @return digitCounter
 	 */
@@ -38,14 +38,13 @@ public class Impl implements IService {
 		
 		for(int i=2; i<sizeOfArray; i++) {
 			if(array[i]>largest) {
-				largest = array[i];
 				secondLargest = largest;
+				largest = array[i];
 			}
 			else if(array[i]>secondLargest) {
 				secondLargest = array[i];
 			}
 		}
-		
 		return secondLargest;
 	}
 }

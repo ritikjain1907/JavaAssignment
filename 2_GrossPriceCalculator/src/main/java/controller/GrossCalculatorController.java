@@ -7,8 +7,8 @@ package main.java.controller;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 import main.java.schema.Product;
+import main.java.service.impl.GrossPriceImpl;
 import main.java.validator.PriceAndTaxValidator;
-import main.java.services.GrossPriceImpl;
 
 /**
  * @author Ritik

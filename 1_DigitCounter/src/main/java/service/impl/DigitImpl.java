@@ -1,15 +1,16 @@
 /**
  * Implementation Class
  */
-package main.java.services;
+package main.java.service.impl;
 
 import main.java.schema.Digit;
+import main.java.service.IService;
 
 /**
  * @author Ritik
  *
  */
-public class DigitImpl {
+public class DigitImpl implements IService{
 	
 	/**
 	 * countDigits Method to count the number of digits in an integer

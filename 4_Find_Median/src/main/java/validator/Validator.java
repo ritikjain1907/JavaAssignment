@@ -14,7 +14,7 @@ public class Validator {
 	 * 
 	 * @param inputInteger
 	 * @return Boolean.True - Valid case
-	 * @return NumberFormatException - Invalid case
+	 * @return RunTimeException - Invalid case
 	 */
 	public Boolean validate(double[] medianArray, Integer sizeOfArray) {
 
@@ -28,7 +28,7 @@ public class Validator {
 					if (medianArray[i] <= medianArray[i + 1]) {
 						continue;
 					} else {
-						throw new ArithmeticException("Array Is Not Sorted");
+						throw new RuntimeException("Array Is Not Sorted");
 					}
 				}
 			} else {
@@ -36,7 +36,7 @@ public class Validator {
 					if (medianArray[i] >= medianArray[i + 1]) {
 						continue;
 					} else {
-						throw new ArithmeticException("Array Is Not Sorted");
+						throw new RuntimeException("Array Is Not Sorted");
 					}
 				}
 			}

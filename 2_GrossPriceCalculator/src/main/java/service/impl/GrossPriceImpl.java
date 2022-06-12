@@ -1,21 +1,23 @@
 /**
  * Implementation Class
  */
-package main.java.services;
+package main.java.service.impl;
 
 import main.java.schema.Product;
+import main.java.service.IService;
 
 /**
  * @author Ritik
  *
  */
-public class GrossPriceImpl {
+public class GrossPriceImpl implements IService {
 	
 	/**
-	 * calculateGrossPrice Method to calculate gross price
+	 * @description calculateGrossPrice Method to calculate gross price
 	 * @param digitObj
 	 * @return digitCounter
 	 */
+	@Override
 	public double calculateGrossPrice(Product productObj) {
 
 		double netPrice = productObj.getNetPrice();

@@ -44,7 +44,7 @@ public class Controller {
 			String incomeTaxFormatted = df.format(incomeTax);
 
 			System.out.println("Income Tax is : " + incomeTaxFormatted);
-		} catch (ArithmeticException e) {
+		} catch (RuntimeException e) {
 			e.printStackTrace();
 		}
 	}

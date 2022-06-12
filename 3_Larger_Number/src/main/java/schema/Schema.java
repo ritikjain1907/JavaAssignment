@@ -1,5 +1,5 @@
 /**
- * Digit Class
+ * Schema Class
  */
 package main.java.schema;
 
@@ -9,8 +9,8 @@ package main.java.schema;
  */
 public class Schema {
 	
-	private Double firstNumber;
-	private Double SecondNumber;
+	private double firstNumber;
+	private double SecondNumber;
 
 	public Schema() {}
 
@@ -18,7 +18,7 @@ public class Schema {
 	 * @param firstNumber
 	 * @param secondNumber
 	 */
-	public Schema(Double firstNumber, Double secondNumber) {
+	public Schema(double firstNumber, double secondNumber) {
 		super();
 		this.firstNumber = firstNumber;
 		SecondNumber = secondNumber;
@@ -27,28 +27,28 @@ public class Schema {
 	/**
 	 * @return the firstNumber
 	 */
-	public Double getFirstNumber() {
+	public double getFirstNumber() {
 		return firstNumber;
 	}
 
 	/**
 	 * @param firstNumber the firstNumber to set
 	 */
-	public void setFirstNumber(Double firstNumber) {
+	public void setFirstNumber(double firstNumber) {
 		this.firstNumber = firstNumber;
 	}
 
 	/**
 	 * @return the secondNumber
 	 */
-	public Double getSecondNumber() {
+	public double getSecondNumber() {
 		return SecondNumber;
 	}
 
 	/**
 	 * @param secondNumber the secondNumber to set
 	 */
-	public void setSecondNumber(Double secondNumber) {
+	public void setSecondNumber(double secondNumber) {
 		SecondNumber = secondNumber;
 	}
 	

@@ -14,12 +14,12 @@ public class Validator {
 	 * 
 	 * @param income
 	 * @return Boolean.True - Valid case
-	 * @return NumberFormatException - Invalid case
+	 * @return RuntimeException - Invalid case
 	 */
 	public Boolean validate(double income) {
 
 		if(income<0) {
-			throw new ArithmeticException("Income is Negative");
+			throw new RuntimeException("Income is Negative");
 		}
 		return Boolean.TRUE;
 	}

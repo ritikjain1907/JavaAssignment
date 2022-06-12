@@ -18,7 +18,7 @@ public class Impl implements IService {
 	 * @return digitCounter
 	 */
 	@Override
-	public Double computeIncomeTax(Schema schemaObj) {
+	public double computeIncomeTax(Schema schemaObj) {
 		
 		double income = schemaObj.getIncome();
 		

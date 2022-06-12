@@ -1,7 +1,20 @@
+/**
+ * Iservice Interface
+ */
 package main.java.service;
+
+/**
+ * @author Ritik
+ *
+ */
 
 import main.java.schema.Schema;
 
 public interface IService {
-	public Double findMedian(Schema schemaObj);
+	/**
+	 * 
+	 * @param schemaObj
+	 * @return double
+	 */
+	public double findMedian(Schema schemaObj);
 }

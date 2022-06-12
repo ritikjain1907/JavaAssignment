@@ -8,17 +8,18 @@ import main.java.service.IService;
 
 /**
  * @author Ritik
+ * @description findMedian Method to find the median
  *
  */
 public class Impl implements IService {
 	
 	/**
-	 * @description findLargerNumber Method to find the larger number between two numbers
-	 * @param digitObj
-	 * @return digitCounter
+	 * @description - findMedian Method to find the median
+	 * @param schemaObj
+	 * @return double
 	 */
 	@Override
-	public Double findMedian(Schema schemaObj) {
+	public double findMedian(Schema schemaObj) {
 		
 		Integer sizeOfArray = schemaObj.getSizeOfArray();
 		double[] medianArray = schemaObj.getMedianArray();

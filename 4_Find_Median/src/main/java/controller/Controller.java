@@ -57,7 +57,7 @@ public class Controller {
 			    
 				System.out.println("Median Value is : " + medianFormatted);
 			}
-			catch(ArithmeticException e) {
+			catch(RuntimeException e) {
 				e.printStackTrace();
 			}
 		}

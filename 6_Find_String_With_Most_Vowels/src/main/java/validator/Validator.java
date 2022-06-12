@@ -10,11 +10,12 @@ package main.java.validator;
 public class Validator {
 
 	/**
-	 * validate method to validate if the array is sorted
+	 * @description - validate method to check if the Array is empty or is there any empty string
 	 * 
-	 * @param inputInteger
+	 * @param stringArray
+	 * @param sizeOfArray
 	 * @return Boolean.True - Valid case
-	 * @return NumberFormatException - Invalid case
+	 * @return RuntimeException - Invalid case
 	 */
 	public Boolean validate(String[] stringArray, Integer sizeOfArray) {
 

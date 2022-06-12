@@ -14,11 +14,11 @@ public class Impl implements IService {
 	
 	/**
 	 * @description computeCompoundedRetailInflation Method to compute compounded retail inflation
-	 * @param digitObj
-	 * @return digitCounter
+	 * @param schemaObj
+	 * @return compoundedRetailInflation
 	 */
 	@Override
-	public Double computeCompoundedRetailInflation(Schema schemaObj) {
+	public double computeCompoundedRetailInflation(Schema schemaObj) {
 		
 		double rateOfInflation = schemaObj.getRateOfInflation();
 		Integer years = schemaObj.getYears();

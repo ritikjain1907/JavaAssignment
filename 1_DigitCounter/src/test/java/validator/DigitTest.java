@@ -3,6 +3,9 @@
  */
 package test.java.validator;
 
+import main.java.schema.Digit;
+import main.java.service.impl.DigitImpl;
+
 /**
  * @author Ritik
  *
@@ -10,6 +13,10 @@ package test.java.validator;
 
 import main.java.validator.DigitValidator;
 import org.junit.Test;
+import main.java.schema.Digit;
+
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Assert;
 
 public class DigitTest {
@@ -25,6 +32,14 @@ public class DigitTest {
 		
 		Boolean check = digitValidator.validateInteger(testInteger);
 		Assert.assertEquals(Boolean.TRUE, check);
+		
+		Integer parseTestInteger = Integer.parseInt(testInteger);
+		
+		Digit digitObj = new Digit(parseTestInteger);
+		DigitImpl digitImpl = new DigitImpl();
+		Integer ans = digitImpl.countDigits(digitObj);
+		
+		assertEquals(ans, Integer.valueOf(3));
 	}
 	
 	/**
@@ -38,6 +53,14 @@ public class DigitTest {
 		
 		Boolean check = digitValidator.validateInteger(testInteger);
 		Assert.assertEquals(Boolean.TRUE, check);
+		
+		Integer parseTestInteger = Integer.parseInt(testInteger);
+		
+		Digit digitObj = new Digit(parseTestInteger);
+		DigitImpl digitImpl = new DigitImpl();
+		Integer ans = digitImpl.countDigits(digitObj);
+		
+		assertEquals(ans, Integer.valueOf(5));
 	}
 	
 	/**
@@ -51,6 +74,14 @@ public class DigitTest {
 		
 		Boolean check = digitValidator.validateInteger(testInteger);
 		Assert.assertEquals(Boolean.TRUE, check);
+		
+		Integer parseTestInteger = Integer.parseInt(testInteger);
+		
+		Digit digitObj = new Digit(parseTestInteger);
+		DigitImpl digitImpl = new DigitImpl();
+		Integer ans = digitImpl.countDigits(digitObj);
+		
+		assertEquals(ans, Integer.valueOf(2));
 	}
 	
 	/**
@@ -64,6 +95,14 @@ public class DigitTest {
 		
 		Boolean check = digitValidator.validateInteger(testInteger);
 		Assert.assertEquals(Boolean.TRUE, check);
+		
+		Integer parseTestInteger = Integer.parseInt(testInteger);
+		
+		Digit digitObj = new Digit(parseTestInteger);
+		DigitImpl digitImpl = new DigitImpl();
+		Integer ans = digitImpl.countDigits(digitObj);
+		
+		assertEquals(ans, Integer.valueOf(5));
 	}
 	
 	/**

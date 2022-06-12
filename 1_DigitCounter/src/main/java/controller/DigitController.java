@@ -7,7 +7,7 @@ package main.java.controller;
 import java.util.Scanner;
 import main.java.schema.Digit;
 import main.java.validator.DigitValidator;
-import main.java.services.DigitImpl;
+import main.java.service.impl.DigitImpl;
 
 /**
  * @author Ritik

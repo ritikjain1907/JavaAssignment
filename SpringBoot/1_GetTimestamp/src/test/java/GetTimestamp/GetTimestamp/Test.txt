@@ -1,0 +1,2 @@
+Test1 - Check whether the displayed timestamp is same as the system timestamp
+Test2 - Refresh After few seconds to check if the timestamp has changed while hitting the API again

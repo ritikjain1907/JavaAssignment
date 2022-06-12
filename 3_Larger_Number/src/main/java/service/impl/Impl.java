@@ -1,0 +1,29 @@
+/**
+ * Implementation Class
+ */
+package main.java.service.impl;
+
+import main.java.schema.Schema;
+import main.java.service.IService;
+
+/**
+ * @author Ritik
+ *
+ */
+public class Impl implements IService {
+	
+	/**
+	 * @description findLargerNumber Method to find the larger number between two numbers
+	 * @param digitObj
+	 * @return digitCounter
+	 */
+	@Override
+	public Double findLargerNumber(Schema schemaObj) {
+		
+		if(schemaObj.getFirstNumber() > schemaObj.getSecondNumber())
+		{
+			return schemaObj.getFirstNumber();
+		}
+		return schemaObj.getSecondNumber();
+	}
+}

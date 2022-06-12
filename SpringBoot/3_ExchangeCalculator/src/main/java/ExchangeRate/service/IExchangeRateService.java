@@ -1,7 +1,18 @@
+/**
+ * IExchange Rate Service Interface
+ */
 package ExchangeRate.service;
 
-import ExchangeRate.dto.ResponseExchangeRate;
+/**
+ * @author Ritik
+ */
+
+import org.springframework.http.ResponseEntity;
 
 public interface IExchangeRateService {
-	public ResponseExchangeRate exchangeRate();
+	/**
+	 * 
+	 * @return ResponseEntity
+	 */
+	public ResponseEntity<?> exchangeRate();
 }

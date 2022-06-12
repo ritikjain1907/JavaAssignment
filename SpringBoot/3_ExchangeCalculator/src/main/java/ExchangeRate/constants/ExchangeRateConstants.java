@@ -1,5 +1,16 @@
+/**
+ * Exchange Rate Constants
+ */
+
 package ExchangeRate.constants;
 
+/**
+ * @author Ritik
+ */
+
 public class ExchangeRateConstants {
-	public static final float ExchangeEURtoUSD = 1.1f;
+	/**
+	 * Fixed Constant
+	 */
+	public static final double ExchangeEURtoUSD = 1.1d;
 }
